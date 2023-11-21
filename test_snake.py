@@ -38,7 +38,7 @@ def test_borders():
         snake.move(True)
     for i in range(15):
         snake.move(False)
-    
+    assert snake.size == 7
     assert snake.body == [[26,15],[27,15],[28,15],[29,15],[30,15],[31,15],[0,15]]
 
     snake.move(True)
