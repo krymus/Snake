@@ -37,7 +37,7 @@ def saveState():
     for i in range(len(Board)):
         for j in range(len(Board[i])):
             if snake.head == [i,j]:
-                f.write("3")
+                f.write("2")
             else:
                 f.write(str(Board[i][j]))
     f.write(" ")
@@ -97,7 +97,7 @@ while running:
     Board = [[0 for _ in range(c.GRID_SIZE)] for _ in range(c.GRID_SIZE)]
     for x in snake.body:
         Board[x[0]][x[1]] = 1
-    Board[foodx][foody] = 2
+    Board[foodx][foody] = 8
 
     for x in range(len(Board)):
         for y in range(len(Board[x])):
@@ -106,7 +106,7 @@ while running:
                 pygame.draw.rect(screen, c.BLACK, square_rect)
             elif Board[x][y] == 1:
                 pygame.draw.rect(screen, (255,102,178), square_rect)
-            elif Board[x][y] == 2:
+            elif Board[x][y] == 8:
                 pygame.draw.rect(screen, (153,204,255), square_rect)
     
     pygame.display.flip()

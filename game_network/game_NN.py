@@ -1,14 +1,11 @@
 import pygame
-from pygame.locals import *
-import time
 import constants as c
 import snake as s
 import random
 from keras.models import load_model
-import tensorflow as tf
 import numpy as np
 
-tf.get_logger().setLevel('ERROR')
+
 
 network = load_model("NN.keras")
 pygame.init()
@@ -45,6 +42,11 @@ foodDraw()
 # Main loop
 running = True
 while running:
+
+    for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+
 
     X = np.array(Board)
     X = X.flatten()

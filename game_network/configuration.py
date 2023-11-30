@@ -12,7 +12,7 @@ def readStates():
     for line in file:
         x = np.array([])
         for i in range(400):
-            x = np.append(x, float(line[i])/3.0)
+            x = np.append(x, float(line[i])/8.0)
         y = int(line[401])
         X = np.append(X,x)
         Y = np.append(Y,y)
@@ -29,6 +29,7 @@ Xtrain, Ytrain = readStates()
 
 model = Sequential([
 Dense(400, activation='relu'),
+Dense(128, activation='relu'),
 Dense(128, activation='relu'),
 Dense(64, activation='relu'),
 Dense(4, activation='softmax')  # Output layer with 4 nodes for directions (up, down, left, right)
