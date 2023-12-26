@@ -86,7 +86,7 @@ while running:
     
     pygame.display.flip()
 
-    pygame.time.delay(100)
+    pygame.time.delay(300)
 
     
         

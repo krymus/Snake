@@ -5,7 +5,7 @@ import constants as c
 import snake as s
 import random
 
-f = open("game_netALG/statesALG.txt", 'a')
+f = open("game_netALG/statesALG2.txt", 'a')
 
 pygame.init()
 
